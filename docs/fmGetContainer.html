@@ -1,0 +1,179 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | fmGetContainer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420542" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1 class="directory_header">fmGetContainer</h1>
+
+		
+<p>
+<h2>Purpose:</h2>
+Normally called via the Web application's custom 404 error handler. 
+Attempts to resolve the request and return the specified container's
+contents. (The URLs that it resolves are those generated using the
+"fmGetContainerURL" function.
+</p>
+		
+<p>
+<h2>Parameters:</h2>
+[1] $fm_databases: The array of FileMaker connections, as specified in FMWebFrame's settings file.
+</p>				
+
+<p>
+<h2>Output:</h2>
+If the URL can be resolved, then the container's contents are served up.
+Otherwise, control returns to the 404 error handler, which can
+continue to process the request.
+</p>				
+
+<p>
+<h2>Example:</h2>
+A custom 404 error handler might call fmGetContainer like this:<br />
+<br />
+<span style="font-size: 9pt;">		
+// Initialize FMWebFrame.<br />
+@require_once ( dirname(__FILE__) . '/FMWebFrame/fmwebframe.php' );<br />
+// Check to see if the request is for a container.<br />
+fmGetContainer( $fm_databases );<br />
+</span>
+</p>			
+
+<p>
+<h2>Notes:</h2>
+fmGetContainer is designed to handle a wide range of file types, and
+to serve the file up based on their mime type. However, in cases where
+the file's mime type either cannot be identified or is not supported,
+then the content will be returned to the client in such a way that it 
+can be downloaded.
+</p>	
+
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

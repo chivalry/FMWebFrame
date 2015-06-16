@@ -1,0 +1,153 @@
+html {
+	overflow-y: scroll;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	margin: 0px;	
+	background: #cccccc;	
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 12pt;
+	line-height: 1.5em;
+	color: #555;
+	padding: 0;		
+}
+
+/* Special styling for selected text. */
+::-moz-selection
+	background: yellow;
+	color: #000;
+	text-shadow: none;
+}
+::selection {
+	background: yellow;
+	color: #000;
+	text-shadow: none;
+}
+
+
+/* Links */
+a, a:visited, #footer a:hover, .entry-title a:hover { 
+	color: #248add; 
+}
+a:hover, a:focus { 
+	color: #000; 
+}
+
+h1 {
+	line-height: 110%
+}
+
+/* Headers used in the body's right (or left) column areas. */
+h2.body_column {
+	font-size: 12pt;
+}
+
+/* Paragraphs that contain smaller text (ex: contact info). */
+div.small_text {
+	font-size: 10pt;
+	line-height: normal;
+}
+
+/* Paragraph with warnings. Appears at the very top of the page. */
+div.warnings {
+	margin: 0px;
+	padding: 6px;
+	font-weight: normal; 
+	font-size: 10pt; 
+	color: black; 
+	text-align: center; 
+	background: yellow;
+	border-bottom: solid 1px #000;
+}
+
+/* Paragraph with errors. Appears at the very top of the page. */
+div.errors {
+	margin: 0px;
+	padding: 6px;
+	font-weight: normal; 
+	font-size: 10pt; 
+	color: white; 
+	text-align: center; 
+	background: red;
+	border-bottom: solid 1px #000;
+}
+
+/* Table that holds the entire page. */
+table.page {
+	margin: auto;
+	width: 850px;	
+	cellpadding: 0; 
+	cellspacing: 0;
+}
+
+/* Table that appears in the top row of the page table. */
+table.header {
+	width: 100%; 
+	margin-top: 12px;
+	margin-bottom: 12px;
+	border-bottom: solid 1px #ccc;
+	background: #fff; 
+	padding: 6px; 
+	font-size: 10pt;
+	
+}
+
+/* Table that appears in the middle row of the page table. */
+table.body {
+	width: 100%;
+	cellpadding: 0;
+	cellspacing: 0;
+	padding: 0px;
+}
+
+/* Tables that appear in the middle row of the page table, in either the left or right columns. */
+table.body_column {
+	width: 100%; 
+	margin-top: 12px; 
+	background: #eee; 
+	padding: 6px; 
+	border-color: #ccc; 
+	border-width: 1px; 
+	border-style: solid;
+}
+
+/* The first "table.body_column" table that appears. */
+table.body_column.first {
+	margin-top: 30px;
+}
+
+/* Table that appears in the last row of the page table. */
+table.footer {
+	width: 100%; 
+	margin-top: 12px; 
+	border-top: solid 1px #ccc;
+	background: #fff; 
+	padding: 6px; 
+	font-size: 10pt;
+}
+
+/* Grid Table */
+table.gridtable {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #666666;
+	border-collapse: collapse;
+}
+table.gridtable th {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #dedede;
+}
+table.gridtable td {
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #666666;
+	background-color: #ffffff;
+}

@@ -1,0 +1,45 @@
+*** FMWebFrame Demo Database ***
+
+There are two accounts setup in the demo database:
+
+Account Name: Admin
+Password: fmwf-admin
+Privilege Set: Full Access
+
+Account Name: php_fmwf
+Password: J6^k=YcFHFjgZ{?YFJ2P
+Privilege Set: FMWebFrame
+
+
+*** Demo Setup ***
+
+Detailed instructions for installing FMWebFrame can be found on the "Installing FMWebFrame" page of the FMWebFrame Web site:
+http://fmwebframe.com/application/installation.php
+
+Here are the steps involved in setting up the demo:
+
+1. Upload the demo database to your FileMaker Server.
+
+2. Upload the PHP code to your Web server.
+
+3. Copy the FileMaker API for PHP. For details, see "Installing the FileMaker API for PHP" on the "Installing FMWebFrame" page.
+
+4. Configure the custom 404 error handler. A sample ".htaccess" file has been included with the demo. See "Setting Up A Custom 404 Error Handler" on the "Installing FMWebFrame" page for details.
+
+5. Adjust FMWebFrame's settings. See "Configuring FMWebFrame's Settings" on the "Installing FMWebFrame" page.
+
+
+*** Technical Support ***
+
+For technical support, please feel free to email me: timdietrich@me.com
+
+
+*** Thanks! ***
+
+Thanks for your interest in FMWebFrame.
+
+Tim Dietrich
+Web: http://timdietrich.me
+Twitter: @tdietrich
+
+

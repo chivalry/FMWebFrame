@@ -1,0 +1,35 @@
+FMWebFrame - Change Log
+
+###
+
+Version 13e (07-18-2014)
+
+Complete rewrite and reorganization of FMWebFrame. 
+* Added support for fmEvaluate function. 
+* Added "Site Shield" function.
+* Redesigned container publishing method.
+* Redesigned fmExecuteSQL function, with support for new OFFSET and FETCH FIRST options.
+* Redesigned demo Web app.
+* Significantly simpler FMWebFrame script in the demo database. 
+
+###
+
+Version 13d (01-13-2014)
+
+First public release.
+* http://www.timdietrich.me/blog/fmwebframe-released/
+
+###
+
+Beta 2 (08-12-2013)
+
+Demonstration of FMWebFrame at the Custom Web Publishing (CWP) meeting for FileMaker DevCon 2013.
+
+###
+
+Beta 1 (07-01-2013)
+
+Official announcement of FMWebFrame. 
+* http://www.timdietrich.me/blog/introducing-fmwebframe/
+
+###

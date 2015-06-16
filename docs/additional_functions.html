@@ -1,0 +1,232 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | Additional Functions</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420649" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1>Additional Functions</h1>
+
+<p>
+FMWebFrame includes the following functions that we have found to be helpful.
+</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDump</span><br />
+Wrapper for PHP's "var_dump" function.<br />
+Example: fmDump ( $fm_result, FALSE, 'Find Results' )
+</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDumpAll</span><br />
+Uses "fmDump" to display several variable scopes, including _SERVER, _SESSION, _COOKIE, _GET, and _POST.<br />
+</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmError</span><br />
+Maps a given FileMaker error code to its corresponding error message.<br />
+Example: fmError ( 202 ) = Field access is denied</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetDocumentRoot</span><br />
+Returns the document root directory under which the current script is executing, as defined in the server's configuration file.<br />
+Example: fmGetDocumentRoot () = /home/156317/domains/fmwebframe.com/html</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetRemoteAddress</span><br />
+Returns the IP address from which the user is viewing the current page.<br />
+Example: fmGetRemoteAddress () = 198.8.80.15</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetRequestTime</span><br />
+Returns the time that the request was made.<br />
+Example: fmGetRequestTime () = 1434420648</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetRequestURI</span><br />
+Returns the URI which was used to access this page.<br />
+Example: fmGetRequestURI () = /application/extra-functions.php</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetQueryString</span><br />
+Returns the query string, if any, with which the page was accessed.<br />
+Example: fmGetQueryString () = </p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetServerAddress</span><br />
+Returns the IP address of the server on which the current PHP script is executing.<br />
+Example: fmGetServerAddress () = 205.186.187.224</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetServerName</span><br />
+Returns the name of the server host under which the current script is executing. 
+If the script is running on a virtual host, this will be the value defined for that virtual host.<br />
+Example: fmGetServerName () = fmwebframe.com</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetServerPort</span><br />
+Returns the port on the server machine being used by the web server for communication. 
+For default setups, this will be '80'; using SSL, for instance, will change this to whatever your defined secure HTTP port is (typically 443).<br />
+Example: fmGetServerPort () = 80</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetURL</span><br />
+Uses PHP's "curl" functionality to replicate FileMaker's "Insert From URL" script step.<br />
+Example: fmGetURL ( 'example.com' )
+</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetUUID</span><br />
+Returns a unique identifier based on the current time.<br />
+Example: fmGetUUID() = fmwf-557f85a9099d75-36657733</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmIsValidEmail</span><br />
+Used to determine whether a given value is a properly-formed email address. 
+Returns a boolean value.
+<br />
+Example: fmIsValidEmail ( 'someone@testcom' ) = </p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmIsValidURL</span><br />
+Used to determine whether a given value is a properly-formed URL. 
+Returns a boolean value.
+<br />
+Example: fmIsValidURL ( 'www.test.com' ) = </p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmStripTags</span><br />
+Returns the given value with unwanted characters either stripped or encoded.
+<br />
+Example: fmStripTags ( 'This is &lt;bold&gt;bold text&lt;/bold&gt;. Or not.' ) = This is bold text. Or not.</p>
+
+
+	
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

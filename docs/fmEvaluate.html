@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | fmEvaluate</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420582" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1 class="directory_header">fmEvaluate</h1>
+
+<p>
+<h2>Purpose:</h2>
+Used to evaluate any FileMaker expression as a calculation.
+</p>
+		
+<p>
+<h2>Parameters:</h2>
+[1] $connection: The FileMaker connection object to be used.<br />
+[2] $expression: The FileMaker expression to be evaluated.<br />
+</p>
+
+<p>
+<h2>Output:</h2>
+Returns an associative array:
+<ul>
+<li>Expression: The expression that was evaluated.</li>
+<li>Result: The result of the evaluated expression.</li>
+</ul>
+</p>
+			
+<p>
+<h2>Example:</h2>
+<span style="font-size: 9pt;">
+fmEvaluate <br />
+( <br />
+	$fmDemo, <br />
+	"Get(CurrentHostTimestamp)"<br />
+);	<br />
+</span>
+</p>			
+	
+<p>
+Here's an example of the array that is returned:<br />
+<span style="font-size: 9pt;">		
+array(2) {<br />
+  ["Expression"]=><br />
+  string(25) "Get(CurrentHostTimestamp)"<br />
+  ["Result"]=><br />
+  string(20) "1/30/2014 1:08:39 PM"<br />
+}	<br />
+</span>
+</p>
+
+<p>
+<h2>History:</h2>
+&bull; Released in FMWebFrame version 13e.<br />
+</p>
+
+<p>
+<h2>Notes:</h2>
+Invalid expressions will return a question mark.
+However, it is entirely possible that the expression is valid,
+and the result really is a question mark.
+</p>
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

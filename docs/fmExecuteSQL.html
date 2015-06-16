@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | fmExecuteSQL</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420507" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1 class="directory_header">fmExecuteSQL</h1>
+
+<p>
+<h2>Purpose:</h2>
+Used to perform a SQL SELECT statement.
+</p>
+		
+<p>
+<h2>Parameters:</h2>
+[1] $connection: The FileMaker connection object to be used.<br />
+[2] $query: The SQL SELECT statement to be performed.<br />
+[3] $start_row: The starting record to be returned. Default is 1.<br />
+[4] $max_rows: The maximum number of records to be returned.<br />
+[5] $field_separator: The separator (delimiter) to be used between fields. Default: [FIELD]<br />
+[6] $row_separator: The separator (delimiter) to be used between rows. Default: [ROW]<br />
+</p>
+
+<p>
+<h2>Output:</h2>
+Returns an associative array:
+<ul>
+<li>Query: The SQL SELECT statement that was performed.</li>
+<li>Field_Separator: The separator that was used between fields.</li>
+<li>Row_Separator: The separator that was used between rows.</li>
+<li>Start_Row: The starting record that was returned.</li>
+<li>Max_Rows: The maximum number of records that were returned (if applicable).</li>
+<li>Result_Code: A numeric code indicating whether the SELECT statement was successful or not. (See below.)</li>
+<li>Result_Code_Description: A textual description of the Result Code.</li>
+<li>Result_Rows_Found_Count: The total number of rows that were found.</li>
+<li>Result_Rows_Returned_Count: The rows that were found, if applicable.</li>
+</ul>
+</p>
+			
+<p>
+<h2>Example:</h2>
+<span style="font-size: 9pt;">
+fmExecuteSQL ( <br />
+$fmDemo,<br />
+'SELECT Last_Name, First_Name, City, State, Age FROM Contacts WHERE State = \'AZ\' AND AGE BETWEEN 40 AND 42 ORDER BY Last_Name, First_Name'<br />
+);<br />
+</span>
+</p>			
+	
+<p>
+Here's an example of the array that is returned:<br />
+<span style="font-size: 9pt;">		
+array(10) {<br />
+  ["Query"]=><br />
+  string(136) "SELECT Last_Name, First_Name, City, State, Age FROM Contacts WHERE State = 'AZ' AND AGE BETWEEN 40 AND 42 ORDER BY Last_Name, First_Name"<br />
+  ["Field_Separator"]=><br />
+  string(7) "[FIELD]"<br />
+  ["Row_Separator"]=><br />
+  string(5) "[ROW]"<br />
+  ["Start_Row"]=><br />
+  string(1) "1"<br />
+  ["Max_Rows"]=><br />
+  string(9) "999999999"<br />
+  ["Result_Code"]=><br />
+  string(1) "1"<br />
+  ["Result_Code_Description"]=><br />
+  string(2) "OK"<br />
+  ["Result_Rows_Found_Count"]=><br />
+  string(2) "12"<br />
+  ["Result_Rows_Returned_Count"]=><br />
+  string(2) "12"<br />
+  ["Result_Rows_Array"]=><br />
+  array(12) {<br />
+	[0]=><br />
+	string(56) "Barrett[FIELD]Ha[FIELD]Apache Junction[FIELD]AZ[FIELD]41"<br />
+	[1]=><br />
+	string(61) "Beachman[FIELD]Carolina[FIELD]Sun City West[FIELD]AZ[FIELD]41"<br />
+	[2]=><br />
+	string(55) "Childers[FIELD]Chaun[FIELD]Jacob Lake[FIELD]AZ[FIELD]42"<br />
+	[3]=><br />
+	string(50) "Faulk[FIELD]Aurora[FIELD]Phoenix[FIELD]AZ[FIELD]40"<br />
+	[4]=><br />
+	string(55) "Finn[FIELD]Lanceford[FIELD]Scottsdale[FIELD]AZ[FIELD]40"<br />
+	[5]=><br />
+	string(57) "Flygare[FIELD]Palak[FIELD]Bullhead City[FIELD]AZ[FIELD]42"<br />
+	[6]=><br />
+	string(51) "Hewett[FIELD]Chetan[FIELD]Phoenix[FIELD]AZ[FIELD]41"<br />
+	[7]=><br />
+	string(51) "Juzswik[FIELD]Ikuyo[FIELD]Phoenix[FIELD]AZ[FIELD]41"<br />
+	[8]=><br />
+	string(51) "Maglione[FIELD]Emil[FIELD]Phoenix[FIELD]AZ[FIELD]42"<br />
+	[9]=><br />
+	string(52) "O'hare[FIELD]Roxanne[FIELD]Kingman[FIELD]AZ[FIELD]41"<br />
+	[10]=><br />
+	string(66) "Schmolck[FIELD]Marina[FIELD]Grand Canyon Caverns[FIELD]AZ[FIELD]42"<br />
+	[11]=><br />
+	string(52) "Welborn[FIELD]Jef[FIELD]Scottsdale[FIELD]AZ[FIELD]41"<br />
+  }<br />
+}<br />
+</span>
+</p>
+
+<p>
+<h2>Result Codes:</h2>
+<ul>
+<li>1: Indicates that the query was successful.</li>
+<li>-1: Indicates that the SELECT statement was invalid.</li>
+<li>-2: Indicates that the SELECT statement was valid, but that no records were found.</li>
+<li>-3: Indicates that the SELECT statement was valid, that records were found,  but that the specified starting row ("$start_row") was out of bounds.</li>
+</ul>
+</p>
+
+<p>
+<h2>Notes:</h2>
+Starting with FileMaker 13, the ExecuteSQL function provided support for
+"OFFSET" and "FETCH FIRST ROWS" clauses. However, if you use those options
+with fmExecuteSQL you might get unexpected results.
+</p>
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

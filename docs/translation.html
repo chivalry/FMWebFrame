@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | FileMaker-to-PHP Translation Functions</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420635" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1>FileMaker-to-PHP Translation Functions</h1>
+
+<p>
+FMWebFrame includes a library of PHP functions that are equivalent to many commonly used FileMaker functions.
+If you're new to PHP, then these functions will help you leverage your knowledge of FileMaker.
+</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmAbs</span><br />
+Returns the absolute value of number.<br />
+Example: fmAbs ( -5.2 ) = 5.2</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmCeiling</span><br />
+Returns number rounded up to the next integer.<br />
+Example: fmCeiling ( -5.2 ) = -5</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmChar</span><br />
+Returns the characters for the Unicode code points in the number.<br />
+Example: fmChar ( 98 ) = b</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmCode</span><br />
+Returns the Unicode code points for the characters in the text.<br />
+Example: fmCode ( 'b' ) = 98</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDate</span><br />
+Returns the calendar date for month, day, and year.<br />
+Example: fmDate ( 11, 27, 1968 ) = 11/27/1968</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDay</span><br />
+Returns a number in the range 1 through 31, representing the day of the month on which date occurs.<br />
+Example: fmDay ( '11/27/1968' ) = 27</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDayName</span><br />
+Returns a text string that is the full name of the weekday for date.<br />
+Example: fmDayName ( '11/27/1968' ) = Wednesday</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDayOfWeek</span><br />
+Returns a number representing the day of the week that date falls on. 
+The number 1 represents Sunday, 2 represents Monday, 3 represents Tuesday, and so on.<br />
+Example: fmDayOfWeek ( '11/27/1968' ) = 4</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmDayOfYear</span><br />
+Returns a number equal to the number of days from the beginning of the year of date.<br />
+Example: fmDayOfYear ( '11/27/1968' ) = 332</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmExact</span><br />
+Compares the contents of any two fields. If the fields match, the result is 1 (True); otherwise, the result is 0 (False).<br />
+Example: fmExact ( 'McDonald', 'MCDOnald' ) = 0</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmFilter</span><br />
+Returns from a given string only those characters specified in a second string, in the order that they were originally entered.<br />
+Example: fmFilter( '(408)555-1212', '0123456789' ) = 4085551212</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmFloor</span><br />
+Returns number rounded down to the next lower integer.<br />
+Example: fmFilter( '(408)555-1212', '0123456789' ) = 4085551212</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetAsDate</span><br />
+Returns dates in text as field type date, for use in formulas involving dates or date functions.<br />
+Example: fmGetAsDate ( '5/1/2007' ) = 5/1/2007</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetAsNumber</span><br />
+Returns only the numbers in text, as field type number, for use with formulas involving numbers or numeric functions.<br />
+Example: fmGetAsNumber ( 'PLAT-NO.1234' ) = -.1234</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetAsTime</span><br />
+Returns times or timestamps in text as field type time, for use with formulas involving the Time or Timestamp functions.<br />
+Example: fmGetAsTime ( '10:51:22' ) = 10:51:22</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetAsTimestamp</span><br />
+Returns text as field type timestamp, for use with formulas involving timestamps.<br />
+Example: fmGetAsTimestamp ( '11/27/1968 10:51:22' ) = 11/27/1968 10:51:22 AM</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetAsURLEncoded</span><br />
+Returns text as URL (Uniform Resource Locator) encoding, for use as a URL.<br />
+Example: fmGetAsURLEncoded ( 'San Diego' ) = San%20Diego</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetCurrentDate</span><br />
+Returns the current date according to the system calendar.<br />
+Example: fmGetCurrentDate() = 6/15/2015</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetCurrentTime</span><br />
+Returns CurrentTime (to the nearest second) according to the system clock.<br />
+Example: fmGetCurrentTime() = 07:10:35 PM</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmGetCurrentTimeStamp</span><br />
+Returns the current date and time (to the nearest second) according to the system clock.<br />
+Example: fmGetCurrentTimeStamp() = 6/15/2015 19:10:35 PM</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmHour</span><br />
+Returns a number representing the hour portion (0-23) of a specified time.<br />
+Example: fmHour ( '3:51:22 PM' ) = 15</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmInt</span><br />
+Drops digits to the right of the decimal point and returns the integer part of number without rounding.<br />
+Example: fmInt ( -5.2 ) = -5</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmLeft</span><br />
+Returns numberOfCharacters in text, counting from the left.<br />
+Example: fmLeft ( 'Xframe', 3 ) = Xfr</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmLeftWords</span><br />
+Returns a text result containing numberOfWords in text, counting from the left.<br />
+Example: fmLeftWords ( 'This is a test.', 2 ) = This is</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmLength</span><br />
+Returns the number of characters in field, including all spaces, numbers, and special characters.<br />
+Example: fmLength ( 'Xframe' ) = 6</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmLower</span><br />
+Returns all letters in text as lowercase.<br />
+Example: fmLower ( 'This is a test.' ) = this is a test.</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMiddle</span><br />
+Extracts the numberOfCharacters from text, starting at the character position specified by start.<br />
+Example: fmMiddle ( 'Xframe', 2, 3 ) = fra</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMiddleWords</span><br />
+Returns a text result containing the numberOfWords from text, beginning at startingWord.<br />
+Example: fmMiddleWords ( 'This is a bigger test.', 2, 3 ) = is a bigger</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMinute</span><br />
+Returns a number representing the minute portion (0-59) of a specified time.<br />
+Example: fmMinute ( '3:51:22 PM' ) = 51</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMod</span><br />
+Returns the remainder after number is divided by divisor.<br />
+Example: fmMod ( 27, 11 ) = 5</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMonth</span><br />
+Returns a number in the range 1 through 12, representing the number of the month of the year in which date occurs.<br />
+Example: fmMonth ( '11/27/1968' ) = 11</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmMonthName</span><br />
+Returns the full name of the month for date.<br />
+Example: fmMonthName ( '11/27/1968' ) = November</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmPatternCount</span><br />
+Returns the number of occurrences of searchString in text.<br />
+Example: fmPatternCount ( 'FMWebFrame', 'frame' ) = 1</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmPosition</span><br />
+Returns the starting position of the specified occurrence of searchString in text.<br />
+Example: fmPosition ( 'FMWebFrame', 'frame' ) = 6</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmProper</span><br />
+Returns the first letter of each word in text as uppercase and all other letters as lowercase.<br />
+Example: fmProper ( 'this is a test.' ) = This Is A Test.</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmRandom</span><br />
+Returns a number between two values, including the two values.<br />
+Note: The behavior of fmRandom is slightly differently from FileMaker's "Random" function, 
+which returns a number between zero and one, including zero, but not including one.<br />
+Example: fmRandom ( 1, 100 ) = 97</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmRight</span><br />
+Returns the specified numberOfCharacters in text, counting from the right.<br />
+Example: fmRight ( 'FMWebFrame', 5 ) = Frame</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmRightWords</span><br />
+Returns a text result containing the numberOfWords in text, counting from the right.<br />
+Example: fmRightWords ( 'This is a test.', 2 ) = a test</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmRound</span><br />
+Returns number rounded off to the specified precision (number of decimal places).<br />
+Example: fmRound ( 123.456, 2 ) = 123.46</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmSeconds</span><br />
+Returns a number representing the seconds portion (0-59) of a specified time.<br />
+Example: fmSeconds ( '3:51:22 PM' ) = 22</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmSerialIncrement</span><br />
+Returns the combined text and numbers specified by text, with the numbers in text incremented by the specified amount.<br />
+Example: fmSerialIncrement ( 'abc12', 1 ) = abc13</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmSubstitute</span><br />
+Returns a text string with every occurrence of searchString in text replaced by replaceString in text.<br />
+Example: fmSubstitute ( 'Xframe', "ram", "stu" ) = Xfstue</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmTime</span><br />
+Returns a time result with the specified number of hours, minutes, and seconds.<br />
+Example: fmTime ( 10, 51, 22 ) = 10:51:22</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmTimestamp</span><br />
+Returns a timestamp containing date as a calendar date and time as a time of day.<br />
+Example: fmTimestamp ( fmGetAsDate ( '5/1/2007' ), fmGetAsTime ( '10:51:22' ) ) = 5/1/2007 10:51:22 AM</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmTrim</span><br />
+Returns text stripped of all leading and trailing spaces.<br />
+Example: fmTrim ( ' This is a test. ' ) = This is a test.</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmTruncate</span><br />
+Returns number truncated to the specified precision (number of decimal places).<br />
+Example: fmTruncate ( 123.456, 2 ) = 123.45</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmUpper</span><br />
+Returns all letters in text as uppercase.<br />
+Example: fmUpper ( 'This is a test.' ) = THIS IS A TEST.</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmWeekOfYear</span><br />
+Returns the number of weeks after January 1 of the year of date.<br />
+Example: fmWeekOfYear ( '11/27/1968' ) = 48</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmWordCount</span><br />
+Returns a count of the total number of words in text.<br />
+Example: fmWordCount ( 'This is a test.' ) = 4</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">fmYear</span><br />
+Returns a number representing the year in which date occurs.<br />
+Example: fmYear ( '11/27/1968' ) = 1968</p>
+
+<p style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">
+<span style="font-weight: bold;">Special thanks to Jonathan Stark</span>, who originally developed many of the FileMaker-to-PHP translation functions found in FMWebFrame. 
+Jonathan is a mobile strategy consultant who helps CEOs transition their business to mobile. 
+Learn more about Jonathan on his Web site: <a href="http://jonathanstark.com" target="_new">http://jonathanstark.com</a>
+</p>
+
+
+
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

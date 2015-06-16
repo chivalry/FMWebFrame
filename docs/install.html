@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame Documentation | Installing FMWebFrame</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420475" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1>Installing FMWebFrame</h1>
+
+<p style="background: #B8D9F4; padding: 9px;">
+Note: For special instructions on how to install the FMWebFrame Demo application on a Mac that is running Mavericks and FileMaker Server (in a a single-machine deployment),
+<a href="installation-mac-os-x-mavericks-single-deploy.php">click here</a>.
+</p>
+
+<p>
+The steps involved in installing FMWebFrame include:
+<ul>
+<li>Configuring your database for FMWebFrame.</li>
+<li>Adding the FMWebFrame PHP code to your Web application.</li>
+<li>If necessary, installing the FileMaker API for PHP.</li>
+<li>Setting up a custom 404 error handler for your Web application.</li>
+<li>Configuring FMWebFrame's settings.</li>
+<li>Including FMWebFrame in your PHP scripts.</li>
+</ul>
+</p>
+
+<h3 style="margin-top: 36px;">Configuring Your Database</h3>
+<p>
+To configure your database for FMWebFrame:
+<ol>
+<li>Copy the FMWebFrame table from the sample database that is included with FMWebFrame.</li>
+<li>Paste the FMWebFrame table into your database.</li>
+<li>An FMWebFrame layout should have automatically been created for you. If necessary, change the name of the layout to: FMWebFrame<br />
+(If you'd like, you can configure that layout so that it does not appear in layout menus. But otherwise, please don't make any changes to it.)</li>
+<li>Copy the FMWebFrame FileMaker script (named "FMWebFrame") from the sample database that is included with FMWebFrame.</li>
+<li>Paste the FMWebFrame script into your database.</li>
+<li>If you do not already have a FileMaker account setup for use by the FileMaker API for PHP, please set one up. 
+The account needs be assigned to a privilege set that has "view only" permissions on the FMWebFrame layout, and "executable only" on the FMWebFrame script.
+Also, the privilege set that the account is in should have the "fmphp" extended privilege assigned to it. 
+The account also needs to have View, Edit, and Create privileges on any tables that you want to be able to upload files to (via "fmPutContainer"), 
+and View privileges on any tables that you want to be able to perform quick finds on (via "fmQuickFind").
+</li>
+</ol>
+</p>
+
+<h3 style="margin-top: 36px;">Adding FMWebFrame to Your Application</h3>
+<p>
+To add FMWebFrame to your application, put a copy of the "FMWebFrame" folder (available in the download) in your 
+application's PHP folder. Ideally, it should be placed in the root of your Web application.
+</p>
+
+
+<h3 style="margin-top: 36px;">Installing the FileMaker API for PHP</h3>
+<p>
+In order for FMWebFrame's caching functions to work properly, FMWebFrame needs direct access to the FileMaker API for PHP files. 
+Therefore, the FileMaker API for PHP should be manually installed in such a way that you can provide the path to it.
+For instructions on how to install the FileMaker API for PHP, 
+see "Manually installing the FileMaker API for PHP" in Chapter 2 of the "FileMaker Server 13 Custom Web Publishing with PHP" documentation, 
+which is available here: 
+<a href="https://fmhelp.filemaker.com/docs/13/en/fms13_cwp_php.pdf" target="_new">
+https://fmhelp.filemaker.com/docs/13/en/fms13_cwp_php.pdf</a>
+</p>
+<p>
+We recommend installing the API in a folder in the root of your Web application. 
+The folder should be named "FileMaker" and within it should be the FileMaker.php file, and the API's own "FileMaker" sub-folder.
+</p>
+<p>
+To specify the path to the FileMaker API for PHP, use FMWebFrame's FMAPI_PATH setting as discussed below ("Configuring FMWebFrame's Settings").
+</p>
+
+<h3 style="margin-top: 36px;">Setting Up A Custom 404 Error Handler</h3>
+<p>
+In order to use FMWebFrame's container publishing function, you'll need to configure a custom 404 error handler
+for your Web application. 
+How you do that depends on the type of Web server that you are running and the operating system that it is running on. 
+If you are in a hosted environment, and are unfamiliar with setting up custom error handlers, then your Web hosting provider might be able to assist you.
+</p>
+<p>
+The server that the FMWebFrame Demo Web site is being hosted on is running Linux and Apache. To configure the 404 error handler,
+we simply added an ".htaccess" file to our server, and added this line to it:
+</p>
+<p style="font-size: 9pt;">
+ErrorDocument 404 /application/404.php
+</p>
+<p>
+The 404.php file can be as sophisticated as you'd like. However, we recommend that it include this code so that 
+FMWebFrame's container functions work properly:
+</p>
+<p style="font-size: 9pt;">
+	// Initialize FMWebFrame.<br />
+	@require_once ( dirname(__FILE__) . '/FMWebFrame/fmwebframe.php' );<br />
+	<br />
+	// Check to see if the request is for a container.<br />
+	fmGetContainer( $fm_databases );<br />
+</p>
+<p>
+You'll find examples of both the .htaccess and 404.php files that we used for the Demo Web site in the FMWebFrame download.
+</p>
+
+<h3 style="margin-top: 36px;">Configuring FMWebFrame's Settings</h3>
+<p>
+You configure FMWebFrame by adjusting the "settings.php" file, which is located in the FMWebFrame folder.
+We've set the default values for the settings so that they will require as few changes as possible.
+</p>
+<p>
+However, in some cases, you will need to adjust the settings. We think you'll find that the settings file is
+well documented. Regardless, here's a quick overview of what the various settings do:
+<ul>
+<li><b>HTTP_ROOT_URL</b>: This is the root URL for your Web application. For example: http://www.fmwebframe.com 
+If your Web application isn't in the root, then specify the folder that it is in. 
+For example: http://www.fmwebframe.com/myapp Be sure to exclude the trailing backslash from the URL. 
+(In other words, use "http://www.fmwebframe.com" and not "http://www.fmwebframe.com/".)</li>
+<li><b>FMAPI_PATH</b>: This is the operating system path to the FileMaker API for PHP.</li>
+<li><b>CACHE_PATH</b>: The FMWebFrame Demo Web app is configured with a subfolder that it uses for all temporary files, 
+including the cache, containers, and uploaded files.
+That folder is named "temp" and is located in the root of the Web application. 
+However, if you'd like to use an alternative folder, or place the temp folder in another location, 
+use the CACHE_PATH setting to tell FMWebFrame where the folder is.</li>
+<li><b>CONTAINER_PATH</b>: Like CACHE_PATH, the CONTAINER_PATH setting can be used to specify an alternate folder in which published containers are stored.</li>
+<li><b>UPLOAD_PATH</b>: Can be used to specify an alternate folder in which uploaded containers are temporarily stored during processing.</li>
+<li><b>UPLOAD_URL</b>: This is the URL that resolves to the folder specified via the "UPLOAD_PATH" setting. 
+FMWebFrame uses this URL to get the uploaded file and place it in the proper container field within the FileMaker database.</li>
+<li><b>TEST_DB_CONNECTIONS</b>: FMWebFrame can automatically test your database connections before handling requests. 
+To do so, set the TEST_DB_CONNECTIONS setting to TRUE. For high volume Web applications, you might want to set this FALSE to reduce the number
+of requests sent to the database.</li>
+<li><b>$fm_databases</b>: This is a PHP array that FMWebFrame uses to establish database connections. The default settings file includes
+an array element that is configured for the sample database. To add a connection for your database, add a similar array element. 
+Be sure to properly specify the "hostspec" (the IP address or name of your FileMaker database server), the database name, 
+and the username and password of a FileMaker account that you want to use to access the database. 
+(To configure that account properly, see "Configuring Your Database" above.)
+</li>
+<li><b>SITE_SHIELD_METHOD</b>: FMWebFrame includes a virtual firewall that can be used to restrict access to the Web application based on 
+visitor IP addresses. For details, see both the inline comments of the settings file as well as the documentation for the fmSiteShield function.</li>
+<li><b>$site_shield_ips</b>: This is the PHP array that the fmSiteShield function uses to allow or deny visitors access to the Web application.</li>
+</ul>
+</p>
+
+<h3 style="margin-top: 36px;">Including FMWebFrame In Your PHP Scripts</h3>
+
+<p>
+To include FMWebFrame in a PHP script, use PHP's "require_once" function to include the FMWebFrame.php file. For example:
+</p>
+<p style="font-size: 9pt;">
+require_once ( dirname (__FILE__) . '/../FMWebFrame/FMWebFrame.php' );
+</p>
+<p>
+You might need to adjust the path to the FMWebFrame folder based its location relative to your script. 
+</p>
+
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>

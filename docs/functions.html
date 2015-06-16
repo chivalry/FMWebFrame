@@ -1,0 +1,231 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<title>FMWebFrame | FMWebFrame Functions</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<link rel="stylesheet" type="text/css" media="all" href="http://fmwebframe.com/application/ui-stylesheet.css" />
+		<link href="http://fmwebframe.com/application/images/favicon.ico?v=1434420495" rel="shortcut icon" />
+	</head>
+
+	<body id="index-page" style="background: #cccccc;">
+	
+		<div style="background: #fff; padding: 9px; border: 1px solid #8F8F8F; width: 900px; margin-left:auto; margin-right:auto; margin-top: 12px; margin-bottom: 12px;">	
+		
+		<table class="page">
+		
+		
+			<!-- Page Header Row -->
+			<tr>
+				<td>
+					<!-- Header Table -->
+					<table class="header">
+						<tr>
+							<td>				
+								<a href="http://fmwebframe.com/" style="font-size: 36pt; font-weight: bold; text-decoration: none;">
+								<img src="http://fmwebframe.com/application/images/fmwebframe_logo.png" border="0"></a>
+							</td>
+							<td style="text-align: right; vertical-align: middle;">
+								<span style="font-weight: normal; font-size: 14pt;">An Extension to<br /> the FileMaker API for PHP</span><br/>
+							</td>		
+						<tr>
+					</table>
+				</td>
+			</tr>
+			
+			
+			<!-- Page Body Row -->
+			<tr>
+				<td>
+					<!-- Body Table -->
+					<table class="body">
+						<tr>
+							<!-- Body Left Column -->
+							<td width="67%" valign="top" style="background: #fff; padding: 6px; border-color: #eee; border-width: 1px; border-style: none; vertical-align: top;">
+								
+<h1>FMWebFrame Functions</h1>
+
+<p>
+Included below are descriptions of the FMWebFrame's core functionality.
+<p>
+
+
+<h2 style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">ExecuteSQL</h2>
+<p>
+With FMWebFrame's "fmExecuteSQL" function, you can query FileMaker databases using SQL SELECT statements directly from within your PHP code Web solutions. 
+The SELECT statements can be static or dynamically generated (for example, based on user criteria). 
+For a demonstration of the ExecuteSQL function, 
+<a href="http://demo.fmwebframe.com/application/executesql-form.php" target="_demo">
+click here</a>.
+</p>
+<p>
+<span style="font-weight: bold;">Functions:</span><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmExecuteSQL.php">fmExecuteSQL</a>
+</p>
+
+
+<h2 style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">QuickFind</h2>
+<p>
+FMWebFrame's "fmQuickFind" function  makes it easy to add FileMaker's native Quick Find function (which some refer to as a "Google-like" search) to your Web solutions.
+For a demonstration of the Quick Find function, 
+<a href="http://demo.fmwebframe.com/application/quick-find-form.php" target="_demo">
+click here</a>.
+</p>
+<p>
+<span style="font-weight: bold;">Functions:</span><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmQuickFind.php">fmQuickFind</a>
+</p>
+
+
+<h2 style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">Containers</h2>
+<p>
+Using FMWebFrame's "fmGetContainerURL" and "fmGetContainer" functions, you can easily 
+publish the contents of container fields, and do so using easy-to-read, SEO-friendly URLs.
+A wide range of file types are supported, including images (gif, jpeg, jpg, png), movies (quicktime, mp4), audio files (mpeg), and more. 
+And all of the latest container storage options are supported, including both the secure and open external storage options.
+</p>
+<p>
+FMWebFrame also provides the "fmPutContainer" function, which can be used to upload files into container fields. 
+The function uses only native FileMaker functionality. No plugins are required.
+</p>
+<p>
+For a demonstation of the FMWebFrame's container publishing functions, 
+<a href="http://demo.fmwebframe.com/application/container-publishing.php" target="_demo">
+click here</a>.
+To give the container uploading function a try,
+<a href="http://demo.fmwebframe.com/application/container-upload-form.php" target="_demo">
+click here</a>.
+<p>
+<span style="font-weight: bold;">Functions:</span><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmGetContainer.php">fmGetContainer</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmGetContainerURL.php">fmGetContainerURL</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmPutContainer.php">fmPutContainer</a>
+</p>
+
+
+<h2 style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">Evaluate</h2>
+<p>
+With FMWebFrame's "fmEvaluate" function, you can use FileMaker's calculation engine to evaluate any valid FileMaker expression. 
+You can even reference custom functions or plugins that have been installed on the server.
+</p>
+<p>
+To give fmEvaluate a try,
+<a href="http://demo.fmwebframe.com/application/evaluate.php" target="_demo">
+click here</a>.
+</p>
+<p>
+<span style="font-weight: bold;">Functions:</span><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmEvaluate.php">fmEvaluate</a>
+</p>
+
+
+<h2 style="margin-top: 36px; border-top: 1px solid #ccc; padding-top: 36px;">Caching</h2>
+<p>
+With FMWebFrame's caching functions, you can easily implement caching techniques in your Web applications. 
+You can cache find results, ExecuteSQL query results, value lists, containers, and more. 
+This can dramatically improve the performance of the application for users, 
+and reduce the load placed on the database server.
+</p>
+<p>
+To see FMWebFrame's caching functions in action,
+<a href="http://demo.fmwebframe.com/application/cache-form.php" target="_demo">
+click here</a>.
+<p>
+<p>
+<span style="font-weight: bold;">Functions:</span><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmCacheGet.php">fmCacheGet</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmCacheList.php">fmCacheList</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmCachePurgeDirectory.php">fmCachePurgeDirectory</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmCachePurgeFile.php">fmCachePurgeFile</a><br />
+&bull; <a href="http://fmwebframe.com/application/function-fmCachePut.php">fmCachePut</a><br />
+</p>
+
+							</td>
+							<!-- Gutter -->
+							<td width="3%" style="background: #ffffff;" valign="top">
+								&nbsp;
+							</td>	
+							<!-- Body Right Column -->						
+							<td width="30%" style="vertical-align: top;">	
+								
+								<!--
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">Version 13e Now Available</h2>
+											<div class="small_text">
+											Includes a new "fmEvaluate" function, improved container publishing and ExecuteSQL support,
+											and more. <a href="http://fmwebframe.com/application/downloads.php">Download it here</a>.
+											<br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>
+								-->							
+							
+								<table class="body_column first">
+									<tr>
+										<td>							
+											<h2 class="body_column">FMWebFrame</h2>
+											<div class="small_text" style="line-height: 150%;">
+											&bull; <a href="http://fmwebframe.com/index.php">Home</a><br />
+											&bull; <a href="http://fmwebframe.com/application/faq.php">FAQ</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/downloads.php">Downloads</a><br />
+											&bull; <a href="http://fmwebframe.com/application/installation.php">Installation</a><br />												
+											&bull; <a href="http://fmwebframe.com/application/troubleshooting.php">Troubleshooting</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/fmwebframe-functions.php">FMWebFrame Functions</a><br />
+											&bull; <a href="http://fmwebframe.com/application/fm-to-php-translations.php">FileMaker-to-PHP Translations</a><br />	
+											&bull; <a href="http://fmwebframe.com/application/extra-functions.php">Additonal Functions</a><br />										
+											&bull; <a href="http://fmwebframe.com/application/recommendations.php">Recommended Resources</a><br />
+											&bull; <a href="http://fmforums.com/forum/forum/204-fm-webframe/">Support Forum</a><br />
+											&bull; <a href="http://fmwebframe.com/application/mailing-list.php">Mailing List</a><br />
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>	
+								
+								<table class="body_column">
+									<tr>
+										<td>							
+											<h2 class="body_column">Online Demo</h2>
+											<div class="small_text">
+											The demo site shows FMWebFrame in action: 
+											<a href="http://demo.fmwebframe.com" target="_demo">demo.fmwebframe.com</a><br />	
+											<br />
+											</div>	
+										</td>
+									</tr>									
+								</table>																										
+																																																														
+							</td>							
+						</tr>	
+					</table>
+				</td>
+			</tr>	
+			
+			
+			<!-- Page Footer Row -->
+			<tr>
+				<td>
+					<!-- Footer Table -->
+					<table class="footer">
+						<tr>
+							<td>
+								&copy; 2015 <a href="http://timdietrich.me" target="_new">Tim Dietrich</a>. FileMaker&reg; is a registered trademark of FileMaker Inc.	
+							</td>
+							<td style="width: 30%; text-align: right;">
+								FMWebFrame v13e.							</td>
+						</tr>					
+					</table>
+				</td>
+			<tr>
+				
+		</table>	
+		
+		</div>
+		
+	</body>
+	
+</html>
